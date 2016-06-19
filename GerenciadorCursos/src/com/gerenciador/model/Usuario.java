@@ -5,6 +5,7 @@ public class Usuario {
     private String login;
     private String senha;
     private String tipo;
+    private Boolean logado = false;
    
     public int getId(){
         return this.id;
@@ -32,5 +33,12 @@ public class Usuario {
     }
     public void setTipo(String tipo){
         this.tipo = tipo;
+    }
+    
+    public Boolean getLogado(){
+        return this.logado;
+    }
+    public void setLogado(Boolean logado){
+        this.logado = logado;
     }
 }
