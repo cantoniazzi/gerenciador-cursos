@@ -20,6 +20,7 @@ public class Login implements Acao {
 			String senha = request.getParameter("senha");
 			
 			if ((email == "") || (senha == "")) {
+				
 				request.setAttribute("obs", "Email ou senha inválido(s)!");
 			
 			} else {

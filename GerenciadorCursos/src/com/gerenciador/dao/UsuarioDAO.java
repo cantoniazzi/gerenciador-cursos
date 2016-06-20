@@ -17,10 +17,9 @@ public class UsuarioDAO {
     public String adicionar(Usuario usuario){
         String retorno = "falha";
         String consulta = "";
-        Conexao conexao = new Conexao();
-        Connection conn = null;
+        Connection conexao = null;
         try {
-            Statement stmt = (Statement) conexao.getConexao().createStatement();
+            Statement stmt = Conexao.getConexao().createStatement();
             
             consulta = " insert into usuarios(tipo, login, senha) " +
                        " values('" + usuario.getTipo() + "','" + usuario.getLogin() + "','" + usuario.getSenha() + "')";
@@ -29,7 +28,7 @@ public class UsuarioDAO {
         }catch(Exception e) {
             e.printStackTrace();
         }finally {
-            conexao.close(conn);
+            Conexao.close(conexao);
         }
         return retorno;
     }
@@ -37,11 +36,10 @@ public class UsuarioDAO {
     //retorna lista de usuários
     public List<Usuario> listar() {
         List<Usuario> usuarios = new ArrayList<Usuario>();
-        Conexao conexao = new Conexao();
-        Connection conn = null;
+        Connection conexao = null;
         
         try {
-            Statement statement = conexao.getConexao().createStatement();
+            Statement statement = Conexao.getConexao().createStatement();
             ResultSet rs = statement.executeQuery("select * from usuarios");
             while (rs.next()) {
                 Usuario usuario = new Usuario();
@@ -57,19 +55,18 @@ public class UsuarioDAO {
         }catch(Exception e) {
             e.printStackTrace();
         }finally {
-            conexao.close(conn);
+            Conexao.close(conexao);
         }
         
         return usuarios;
     }
     public Usuario Login(String email, String senha){
-        Conexao conexao = new Conexao();
-        Connection conn = null;
+        Connection conexao = null;
         String consulta =  "select * from SSI_0073156_USUARIOS where email = '" + email + "' and senha = '" + senha + "'";
         Usuario usuario = new Usuario();
-        
+
         try{
-            Statement statement = conexao.getConexao().createStatement();
+            Statement statement = Conexao.getConexao().createStatement();
             ResultSet rs = statement.executeQuery(consulta);
             while (rs.next()) {
                 usuario.setId(rs.getInt("usuario_id"));
@@ -80,8 +77,9 @@ public class UsuarioDAO {
         }catch(Exception e){
             e.printStackTrace();
         }finally{
-            conexao.close(conn);
+            Conexao.close(conexao);
         }
+        
         return usuario;
     }
     

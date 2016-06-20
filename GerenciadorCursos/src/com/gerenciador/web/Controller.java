@@ -33,8 +33,7 @@ public class Controller extends HttpServlet {
 			
 			dispatcher.forward(request, response);
 			
-		} catch (ClassNotFoundException | InstantiationException
-				| IllegalAccessException e) {
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 			throw new ServletException(e);
 		}
 		
