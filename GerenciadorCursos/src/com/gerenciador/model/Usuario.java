@@ -2,9 +2,9 @@ package com.gerenciador.model;
 
 public class Usuario {
     private int id;
-    private String login;
+    private String nome;
+    private String email;
     private String senha;
-    private String tipo;
     private Boolean logado = false;
    
     public int getId(){
@@ -14,11 +14,18 @@ public class Usuario {
         this.id = id;
     }
     
-    public String getLogin(){
-        return this.login;
+    public String getNome(){
+        return this.nome;
     }
-    public void setLogin(String login){
-        this.login = login;
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    
+    public String getEmail(){
+        return this.email;
+    }
+    public void setEmail(String email){
+        this.email = email;
     }
     
     public String getSenha(){
@@ -27,14 +34,7 @@ public class Usuario {
     public void setSenha(String senha){
         this.senha = senha;
     }
-    
-    public String getTipo(){
-        return this.tipo;
-    }
-    public void setTipo(String tipo){
-        this.tipo = tipo;
-    }
-    
+
     public Boolean getLogado(){
         return this.logado;
     }

@@ -298,3 +298,75 @@ BEGIN
   COMMIT;
 
 END;
+
+--==============================================================================================================================
+
+create or replace PROCEDURE ssi_0073156_add_usuario(
+  p_nome IN ssi_0073156_usuarios.usuario_nome%TYPE,
+  p_email IN ssi_0073156_usuarios.email%TYPE,
+  p_senha IN ssi_0073156_usuarios.senha%TYPE
+  )
+IS
+BEGIN
+    INSERT INTO ssi_0073156_usuarios (usuario_id,usuario_nome, email, senha)
+    VALUES(ssi_0073156_susuario.nextval,p_nome, p_email, p_senha);
+END;
+/
+show errros;
+
+create or replace PROCEDURE ssi_0073156_edit_usuario(
+     p_id IN ssi_0073156_usuarios.usuario_id%TYPE,
+     p_nome IN ssi_0073156_usuarios.usuario_nome%TYPE,
+     p_email IN ssi_0073156_usuarios.email%TYPE,
+     p_senha IN ssi_0073156_usuarios.senha%TYPE
+     )
+IS
+BEGIN
+  UPDATE ssi_0073156_usuarios 
+  SET usuario_nome = p_nome, email = p_email, senha = p_senha
+  WHERE usuario_id = p_id;
+  COMMIT;
+END;
+/
+show errors;
+
+create or replace PROCEDURE ssi_0073156_get_usuario(
+     p_id IN ssi_0073156_alunos.usuario_id%TYPE,  
+     o_nome OUT ssi_0073156_usuarios.usuario_nome%TYPE,
+     o_email OUT ssi_0073156_usuarios.email%TYPE,
+     o_senha OUT ssi_0073156_usuarios.senha%TYPE
+     )
+IS
+BEGIN
+  SELECT usuario_nome, email, senha
+  INTO   o_nome, o_email, o_senha
+  from  ssi_0073156_alunos WHERE usuario_id = p_id;
+END;
+/
+show errors;
+
+create or replace PROCEDURE ssi_0073156_delete_usuario(
+  p_id IN ssi_0073156_usuarios.usuario_id%TYPE
+  )
+IS
+  DELETE FROM ssi_0073156_usuarios WHERE usuario_id = p_id
+BEGIN
+END
+/
+show errros;
+
+create or replace PROCEDURE ssi_0073156_login_usuario(
+     p_email IN ssi_0073156_usuarios.email%TYPE OUT varchar2,
+     p_senha IN ssi_0073156_usuarios.senha%TYPE OUT varchar2,
+     o_id OUT ssi_0073156_alunos.usuario_id%TYPE,  
+     o_nome OUT ssi_0073156_usuarios.usuario_nome%TYPE
+     )
+IS
+BEGIN
+  SELECT usuario_id,usuario_nome, email, senha
+  INTO   o_id,o_nome, p_email, p_senha
+  from  ssi_0073156_usuarios WHERE email = p_email AND senha = p_senha;
+END;
+/
+show errors;
+
