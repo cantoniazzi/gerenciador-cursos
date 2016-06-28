@@ -10,13 +10,13 @@ import java.sql.SQLException;
  */
 public class Conexao {
 	private static final String driver = "oracle.jdbc.driver.OracleDriver";
-    private static final String stringConexao = "jdbc:oracle:thin:@oracle.inf.poa.ifrs.edu.br:1521:XE";
+    private static final String stringConexao = "";
    
     public static Connection getConexao() throws SQLException {
 		Connection conn = null;
 		try {
 			Class.forName(driver);
-			conn = DriverManager.getConnection(stringConexao, "carlos", "tadeu");
+			conn = DriverManager.getConnection(stringConexao, "", "");
 			System.out.println("Obtendo conexão...");
 		return conn;
 		} catch (ClassNotFoundException e) {
