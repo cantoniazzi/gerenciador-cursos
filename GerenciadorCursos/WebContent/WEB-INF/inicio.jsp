@@ -14,11 +14,10 @@
            <h1 class="page-header">Bem vindo ao Sistema de Cursos</h1>
            <h3>Selecione a opção desejada no menu superior</h3>
            <div class="col-md-6">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/pUuxhkpBWTo" frameborder="0" allowfullscreen></iframe>
+           		<iframe width="560" height="315" src="https://www.youtube.com/embed/k6U-i4gXkLM?list=PL57FCE46F714A03BC" frameborder="0" allowfullscreen></iframe>
            </div>
            <div class="col-md-6">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/R0tHEJl_Y8E" frameborder="0" allowfullscreen></iframe>
-           </div>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/S3t-5UtvDN0" frameborder="0" allowfullscreen></iframe>	           </div>
        </div>
     <c:import url="footer.jsp"></c:import>
     

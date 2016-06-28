@@ -147,21 +147,23 @@ public class UsuarioDAO {
         CallableStatement clst = null;
         
         Usuario usuario = new Usuario();
-        String procedure = "{call ssi_0073156_login_usuario(?, ?)}";
+        String procedure = "{call ssi_0073156_login_usuario(?, ?, ? ,?)}";
         
         try {
         	clst = Conexao.getConexao().prepareCall(procedure);
             
-        	clst.registerOutParameter(1, java.sql.Types.VARCHAR);
-        	clst.registerOutParameter(2, java.sql.Types.VARCHAR);
+        	clst.setString(1, email);
+        	clst.setString(2, senha);
+        	clst.registerOutParameter(3, java.sql.Types.INTEGER);
+        	clst.registerOutParameter(4, java.sql.Types.VARCHAR);
         	
 			// execute ssi_0073156_login_usuario store procedure
         	clst.executeUpdate();
         
-        	usuario.setId(clst.getInt(1));
-        	usuario.setNome(clst.getString(2));
-        	usuario.setEmail(clst.getString(3));
-        	usuario.setSenha(clst.getString(4));
+        	usuario.setId(clst.getInt(3));
+        	usuario.setNome(clst.getString(4));
+        	usuario.setEmail(email);
+        	usuario.setSenha(senha);
         	usuario.setLogado(true);
         
         } catch(SQLException e) {

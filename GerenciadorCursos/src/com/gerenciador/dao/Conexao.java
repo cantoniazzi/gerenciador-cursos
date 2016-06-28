@@ -5,18 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
  * @author Cássio
  */
 public class Conexao {
 	private static final String driver = "oracle.jdbc.driver.OracleDriver";
-    private static final String stringConexao = "";
+    private static final String stringConexao = "jdbc:oracle:thin:@oracle.inf.poa.ifrs.edu.br:1521:XE";
    
     public static Connection getConexao() throws SQLException {
 		Connection conn = null;
 		try {
 			Class.forName(driver);
-			conn = DriverManager.getConnection(stringConexao, "", "");
+			conn = DriverManager.getConnection(stringConexao, "carlos", "tadeu");
 			System.out.println("Obtendo conexão...");
 		return conn;
 		} catch (ClassNotFoundException e) {
