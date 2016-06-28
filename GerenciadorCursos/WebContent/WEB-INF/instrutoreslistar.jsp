@@ -1,53 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="/WEB-INF/lib/c.tld" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cursos de Extensão - Alunos Listar</title>
+<title>Cursos de Extensão - Instrutores Listar</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
 	<c:import url="header.jsp"></c:import>
+	
 	<div id="main" class="container-fluid" style="margin-top:50px;">
         <div id="list" class="row">
             <div class="table-responsive col-md-12">
                 <table class="table table-striped" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr>
-                            <td colspan="3"><h3>Alunos - Listar</h3></td>
+                            <td colspan="3"><h3>Instrutores - Listar</h3></td>
                         </tr>
                         <tr>
                             <td colspan="3">
-                                <a href="Controller?acao=AlunoAdicionar" class="btn btn-success">Adicionar Aluno</a>
+                                <a href="Controller?acao=InstrutorAdicionar" class="btn btn-success">Adicionar Instrutor</a>
                             </td>
                         </tr>
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>CPF</th>
                             <th>Email</th>
-                            <th>Fone</th>
-                            <th>Data Matrícula</th>
+                            <th>Valor Hora</th>
+                            <th>Certificados</th>
                             <th></th>
                             <th></th>
                          </tr>
                     </thead>
                     <tbody>
-                    	<c:forEach var="aluno" items="${alunos}">
+                    	<c:forEach var="instrutor" items="${instrutores}">
                         	<tr>
-	                            <td>${aluno.getId()}</td>
-	                            <td>${aluno.getNome()}</td>
-	                            <td>${aluno.getCpf()}</td>
-	                            <td>${aluno.getEmail()}</td>
-                        		<td>${aluno.getFone()}</td>
-                        		<td>${aluno.getDataNascimento()}</td>
-                        		<td>
-	                            	<a href="Controller?acao=AlunoAdicionar&id=<c:out value="${aluno.getId()}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+	                            <td>${instrutor.getId()}</td>
+	                            <td>${instrutor.getNome()}</td>
+                            	<td>${instrutor.getEmail()}</td>
+	                            <td>${instrutor.getValorHora()}</td>
+	                            <td>${instrutor.getCertificados()}</td>
+	                            <td>
+	                            	<a href="Controller?acao=InstrutorAdicionar&id=<c:out value="${instrutor.getId()}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
 	                            </td>
                             	<td>
-                            		<a href="Controller?acao=AlunoRemover&id=<c:out value="${aluno.getId()}"/>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                            		<a href="Controller?acao=InstrutorRemover&id=<c:out value="${instrutor.getId()}"/>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
                             	</td>
                         	</tr>
                         </c:forEach>

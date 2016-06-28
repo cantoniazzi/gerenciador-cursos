@@ -1,13 +1,12 @@
 package com.gerenciador.model;
 
-import java.util.Date;
-
 public class Aluno {
 	private int id;
 	private String nome;
+	private String cpf;
 	private String email;
 	private String fone;
-	private Date data_nascimento;
+	private String dataNascimento;
 	
 	public int getId() {
 		return id;
@@ -15,29 +14,40 @@ public class Aluno {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public String getCpf() {
+		return this.cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	public String getFone() {
 		return fone;
 	}
 	public void setFone(String fone) {
 		this.fone = fone;
 	}
-	public Date getData_nascimento() {
-		return data_nascimento;
+	
+	public String getDataNascimento() {
+		return this.dataNascimento;
 	}
-	public void setData_nascimento(Date data_nascimento) {
-		this.data_nascimento = data_nascimento;
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 }

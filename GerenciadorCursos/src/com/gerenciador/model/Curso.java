@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Curso {
 	private int id;
 	private String nome;
-	private ArrayList<String> requisitos;
-	private int carga_horaria;
+	private String requisito;
+	private int cargaHoraria;
 	private double preco;
 	
 	public int getId() {
-		return id;
+		return this.id;
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -21,17 +21,17 @@ public class Curso {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public ArrayList<String> getRequisitos() {
-		return requisitos;
+	public String getRequisito() {
+		return this.requisito;
 	}
-	public void setRequisitos(String requisito) {
-		this.requisitos.add(requisito);
+	public void setRequisito(String requisito) {
+		this.requisito = requisito;
 	}
-	public int getCarga_horaria() {
-		return carga_horaria;
+	public int getCargaHoraria() {
+		return this.cargaHoraria;
 	}
-	public void setCarga_horaria(int carga_horaria) {
-		this.carga_horaria = carga_horaria;
+	public void setCargaHoraria(int cargaHoraria) {
+		this.cargaHoraria = cargaHoraria;
 	}
 	public double getPreco() {
 		return preco;

@@ -12,10 +12,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="Controller?acao=Alunoslistar">Alunos</a></li>
+                <li><a href="Controller?acao=AlunosListar">Alunos</a></li>
                 <li><a href="Controller?acao=InstrutoresListar">Instrutores</a></li>
                 <li><a href="Controller?acao=CursosListar">Cursos</a></li>
-                <li><a href="Controller??acao=UsuariosListar">Usuários</a></li>
+                <li><a href="Controller?acao=TurmasListar">Turmas</a></li>
+                <li><a href="Controller?acao=MatriculasListar">Matrículas</a></li>
+                <li><a href="Controller?acao=UsuariosListar">Usuários</a></li>
                 <li><a href="Controller?acao=Logout">Sair</a></li>
             </ul>
         </div>
