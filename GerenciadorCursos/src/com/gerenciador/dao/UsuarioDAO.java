@@ -9,7 +9,6 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gerenciador.model.Aluno;
 import com.gerenciador.model.Usuario;
 
 /**

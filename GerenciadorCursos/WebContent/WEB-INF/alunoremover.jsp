@@ -7,16 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Cursos de Extensão - Aluno Remover</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<style>
-		footer {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			/* Set the fixed height of the footer here */
-			height: 60px;
-			background-color: #f5f5f5;	
-		}
-	</style>
+	<link rel="stylesheet" href="css/rvfs.css" />
 </head>
 <body>
 	<c:import url="header.jsp"></c:import>
@@ -39,6 +30,9 @@
 	<c:import url="footer.jsp"></c:import>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/store.min.js"></script>
+	<script type="text/javascript" src="js/rv-jquery-fontsize.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </body>
 </html>

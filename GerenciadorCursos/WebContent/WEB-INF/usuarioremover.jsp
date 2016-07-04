@@ -1,23 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="/WEB-INF/lib/c.tld" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Cursos de Extensão - Instrutor Remover</title>
+	<title>Cursos de Extensão - Usuário Remover</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/rvfs.css" />
 </head>
 <body>
 	<c:import url="header.jsp"></c:import>
 	<div id="main" class="container-fluid" style="margin-top: 50px;">
-		<h3 class="page-header">Remover Instrutor</h3>
+		<h3 class="page-header">Remover Usuário</h3>
 	    <div align="center" class="alert alert-danger" style="text-align:center;">
-            Você deseja realmente remover o instrutor <strong><c:out value="${instrutor.getNome()}"/> ?</strong>
+            Você deseja realmente remover o usuário <strong><c:out value="${usuario.getNome()}"/> ?</strong>
         </div>	
-		<form class="form-horizontal" action="Controller?acao=InstrutorRemover" method="POST">
-			<input type="hidden" name="id" value="${instrutor.getId()}" />
+		<form class="form-horizontal" action="Controller?acao=UsuarioRemover" method="POST">
+			<input type="hidden" name="id" value="${usuario.getId()}" />
 		  	<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10 text-center">
 			  		<input type="submit" name="submit" value="Remover" class="btn btn-primary" />

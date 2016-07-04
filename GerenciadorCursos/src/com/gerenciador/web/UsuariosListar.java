@@ -14,7 +14,6 @@ public class UsuariosListar implements Acao {
 		if (request.getMethod().equals("GET")) {
 			
 			request.setAttribute("usuarios", new UsuarioDAO().list());
-			
 		}
 
 		return page;

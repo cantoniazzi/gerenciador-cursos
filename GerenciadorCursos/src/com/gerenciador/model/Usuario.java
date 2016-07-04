@@ -4,6 +4,7 @@ public class Usuario {
     private int id;
     private String nome;
     private String email;
+    private String cpf;
     private String senha;
     private Boolean logado = false;
    
@@ -26,6 +27,13 @@ public class Usuario {
     }
     public void setEmail(String email){
         this.email = email;
+    }
+    
+    public String getCpf(){
+        return this.cpf;
+    }
+    public void setCpf(String cpf){
+        this.cpf = cpf;
     }
     
     public String getSenha(){

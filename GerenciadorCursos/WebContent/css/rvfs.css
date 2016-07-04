@@ -1,0 +1,25 @@
+/*
+ * Font size style declarations for each variation.
+ *
+ * Observation: Note that the amount of classes here
+ * rely on how many variations you set on $.rvFontsize() call.
+ * 
+ * This classes are required to make rv font size jquery plugin works.
+ */
+
+.rvfs-1 * { font-size: 70% }
+.rvfs-2 * { font-size: 80% }
+.rvfs-3 * { font-size: 90% }
+.rvfs-4 * { font-size: 100% }
+.rvfs-5 * { font-size: 110% }
+.rvfs-6 * { font-size: 120% }
+/*
+.rvfs-7 * { font-size: 130% }
+.rvfs-8 * { font-size: 140% }
+.rvfs-9 * { font-size: 150% }
+.rvfs-10 * { font-size: 160% }
+.rvfs-11 * { font-size: 170% }
+.rvfs-12 * { font-size: 180% }
+.rvfs-13 * { font-size: 190% }
+.rvfs-14 * { font-size: 200% }
+*/

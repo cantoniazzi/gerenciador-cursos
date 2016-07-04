@@ -29,6 +29,14 @@ public class Controller extends HttpServlet {
 			Class<?> tipo = Class.forName(servlet);
 			Acao instancia = (Acao) tipo.newInstance();
 			String pagina = instancia.execute(request, response);
+			
+			//check user is logged
+			if (acao == "Login" && session.getAttribute("UsuarioId") != null)
+				pagina = "/WEB-INF/inicio.jsp";
+			
+			if (session.getAttribute("UsuarioId") == null) 
+				pagina = "/WEB-INF/login.jsp";
+			
 			RequestDispatcher dispatcher = request.getRequestDispatcher(pagina);
 			
 			dispatcher.forward(request, response);
